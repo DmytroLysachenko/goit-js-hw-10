@@ -54,7 +54,7 @@ body {
   background: #fff;
 }
 
-.wrapper button {
+button {
   border-radius: 8px;
   padding: 8px 16px;
   width: 75px;
