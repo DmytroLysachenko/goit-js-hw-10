@@ -54,7 +54,7 @@ body {
   background: #fff;
 }
 
-button {
+.wrapper button {
   border-radius: 8px;
   padding: 8px 16px;
   width: 75px;
@@ -107,12 +107,7 @@ button {
   margin: 0 auto;
 }
 
-.iziToast
-  .fadeInUp
-  .iziToast-theme-dark
-  .iziToast-color-red
-  .iziToast-animateInside
-  .iziToast-opened {
+.iziToast {
   border-radius: 4px;
   padding: 20px;
   width: 302px;
