@@ -22,7 +22,7 @@ const makePromise = ({ delay, shouldResolve }) => {
       backgroundColor: 'orange',
       theme: 'dark', // dark
       color: 'orange', // blue, red, green, yellow
-      iconUrl: './img/achtung.png',
+      iconUrl: '../img/achtung.png',
       position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
     });
   }
@@ -38,7 +38,6 @@ const createOptions = () => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   const options = createOptions();
-  console.log(inputs[0].valueAsNumber);
   makePromise(options)
     .then(value =>
       iziToast.show({
@@ -47,19 +46,19 @@ form.addEventListener('submit', event => {
         backgroundColor: 'green',
         theme: 'dark', // dark
         color: 'green', // blue, red, green, yellow
-        iconUrl: './img/ok.png',
+        iconUrl: '../img/ok.png',
         position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
       })
     )
-    .catch(value => {
+    .catch(value =>
       iziToast.show({
         title: 'OK',
         message: value,
         backgroundColor: 'red',
         theme: 'dark', // dark
         color: 'red', // blue, red, green, yellow
-        iconUrl: './img/ok.png',
+        iconUrl: '../img/ok.png',
         position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-      });
-    });
+      })
+    );
 });
