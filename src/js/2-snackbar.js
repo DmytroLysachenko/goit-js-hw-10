@@ -38,27 +38,27 @@ const createOptions = () => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   const options = createOptions();
-  makePromise(options)
-    .then(value =>
+  makePromise(options).then(
+    value =>
       iziToast.show({
         title: 'OK',
         message: value,
         backgroundColor: 'green',
-        theme: 'dark', // dark
-        color: 'green', // blue, red, green, yellow
+        theme: 'dark',
+        color: 'green',
         iconUrl: '../img/ok.png',
-        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-      })
-    )
-    .catch(value =>
+        position: 'topRight',
+      }),
+    err => {
       iziToast.show({
         title: 'OK',
-        message: value,
+        message: err,
         backgroundColor: 'red',
-        theme: 'dark', // dark
-        color: 'red', // blue, red, green, yellow
+        theme: 'dark',
+        color: 'red',
         iconUrl: '../img/ok.png',
-        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-      })
-    );
+        position: 'topRight',
+      });
+    }
+  );
 });
