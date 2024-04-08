@@ -1,5 +1,8 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import caution from '../img/achtung.png';
+
+import ok from '../img/ok.png';
 
 const form = document.querySelector('.form');
 const inputs = document.querySelectorAll('input');
@@ -21,7 +24,7 @@ const makePromise = ({ delay, shouldResolve }) => {
       backgroundColor: 'orange',
       theme: 'dark',
       color: 'orange',
-      iconUrl: './achtung.png',
+      iconUrl: caution,
       position: 'topRight',
     });
   }
@@ -45,7 +48,7 @@ form.addEventListener('submit', event => {
         backgroundColor: 'green',
         theme: 'dark',
         color: 'green',
-        iconUrl: './ok.png',
+        iconUrl: ok,
         position: 'topRight',
       })
     )
@@ -56,7 +59,7 @@ form.addEventListener('submit', event => {
         backgroundColor: 'red',
         theme: 'dark',
         color: 'red',
-        iconUrl: './ok.png',
+        iconUrl: ok,
         position: 'topRight',
       })
     );
