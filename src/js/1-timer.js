@@ -18,21 +18,21 @@ flatpickr('#datetime-picker', {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
-  minuteIncrement: 2,
+  minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < Date.now()) {
       buttonStart.classList.remove('btn-active');
       inputDate.classList.remove('input-active');
       iziToast.show({
         title: 'Error',
-        message: 'Illegal operation',
+        message: 'Please choose date in the future',
         backgroundColor: 'red',
         theme: 'dark',
         color: 'red',
         iconUrl: notOk,
         position: 'topRight',
       });
-      selectedDates[0] = new Date(Date.now());
+      selectedDates[0] = Date.now();
       buttonStart.setAttribute('disabled', 'true');
     } else {
       userSelectedDate = selectedDates[0];
@@ -48,16 +48,22 @@ buttonStart.addEventListener('click', () => {
   buttonStart.classList.remove('btn-active');
   inputDate.setAttribute('disabled', 'true');
   inputDate.classList.remove('input-active');
+  inputDate.style.cursor = 'default';
+  console.log(inputDate);
   const timerId = setInterval(() => {
     const diff = userSelectedDate - Date.now();
-    if (diff <= 0) {
-      clearInterval(timerId);
-    }
     const { days, hours, minutes, seconds } = convertMs(diff);
     daysCounter.textContent = addLeadingZero(days);
     hoursCounter.textContent = addLeadingZero(hours);
     minutesCounter.textContent = addLeadingZero(minutes);
     secondsCounter.textContent = addLeadingZero(seconds);
+    if (diff <= 0) {
+      clearInterval(timerId);
+      daysCounter.textContent = addLeadingZero(0);
+      hoursCounter.textContent = addLeadingZero(0);
+      minutesCounter.textContent = addLeadingZero(0);
+      secondsCounter.textContent = addLeadingZero(0);
+    }
   });
 });
 

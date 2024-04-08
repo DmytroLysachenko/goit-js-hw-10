@@ -4,7 +4,10 @@ import caution from '../img/caution.png';
 import ok from '../img/ok.png';
 
 const form = document.querySelector('.form');
-const inputs = document.querySelectorAll('input');
+const inputDelay = document.querySelector('input[name="delay"]');
+const inputFulfilled = document.querySelector('input[value="fulfilled"]');
+const inputRejected = document.querySelector('input[value="rejected"]');
+console.log(inputDelay, inputFulfilled, inputRejected);
 const makePromise = ({ delay, shouldResolve }) => {
   if (delay >= 0) {
     return new Promise((resolve, reject) => {
@@ -31,8 +34,10 @@ const makePromise = ({ delay, shouldResolve }) => {
 
 const createOptions = () => {
   const options = {};
-  options.delay = inputs[0].value;
-  options.shouldResolve = inputs[1].checked;
+  options.delay = inputDelay.value;
+  if (inputFulfilled.checked && !inputRejected.checked) {
+    options.shouldResolve = true;
+  }
   return options;
 };
 
