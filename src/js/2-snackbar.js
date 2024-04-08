@@ -1,7 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import caution from '../img/achtung.png';
-
+import caution from '../img/caution.png';
 import ok from '../img/ok.png';
 
 const form = document.querySelector('.form');
