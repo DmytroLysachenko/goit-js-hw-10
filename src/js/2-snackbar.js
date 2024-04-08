@@ -49,7 +49,7 @@ form.addEventListener('submit', event => {
         position: 'topRight',
       })
     )
-    .catch(value => {
+    .catch(value =>
       iziToast.show({
         title: 'OK',
         message: value,
@@ -58,6 +58,6 @@ form.addEventListener('submit', event => {
         color: 'red',
         iconUrl: './ok.png',
         position: 'topRight',
-      });
-    });
+      })
+    );
 });
