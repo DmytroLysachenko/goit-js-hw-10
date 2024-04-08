@@ -28,7 +28,7 @@ flatpickr('#datetime-picker', {
         backgroundColor: 'red',
         theme: 'dark',
         color: 'red',
-        iconUrl: '../img/notok.png',
+        iconUrl: '/notok.png',
         position: 'topRight',
       });
       selectedDates[0] = new Date(Date.now());
