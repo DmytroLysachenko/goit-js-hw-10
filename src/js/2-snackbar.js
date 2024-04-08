@@ -3,7 +3,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
 const inputs = document.querySelectorAll('input');
-console.log(inputs);
 const makePromise = ({ delay, shouldResolve }) => {
   if (delay >= 0) {
     return new Promise((resolve, reject) => {
@@ -20,10 +19,10 @@ const makePromise = ({ delay, shouldResolve }) => {
       title: 'Caution',
       message: 'Number should be positive',
       backgroundColor: 'orange',
-      theme: 'dark', // dark
-      color: 'orange', // blue, red, green, yellow
+      theme: 'dark',
+      color: 'orange',
       iconUrl: '../img/achtung.png',
-      position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+      position: 'topRight',
     });
   }
 };
@@ -38,8 +37,8 @@ const createOptions = () => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   const options = createOptions();
-  makePromise(options).then(
-    value =>
+  makePromise(options)
+    .then(value =>
       iziToast.show({
         title: 'OK',
         message: value,
@@ -48,17 +47,17 @@ form.addEventListener('submit', event => {
         color: 'green',
         iconUrl: '../img/ok.png',
         position: 'topRight',
-      }),
-    err => {
+      })
+    )
+    .catch(value => {
       iziToast.show({
         title: 'OK',
-        message: err,
+        message: value,
         backgroundColor: 'red',
         theme: 'dark',
         color: 'red',
         iconUrl: '../img/ok.png',
         position: 'topRight',
       });
-    }
-  );
+    });
 });

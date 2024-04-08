@@ -26,16 +26,15 @@ flatpickr('#datetime-picker', {
         title: 'Error',
         message: 'Illegal operation',
         backgroundColor: 'red',
-        theme: 'dark', // dark
-        color: 'red', // blue, red, green, yellow
-        iconUrl: './img/notok.png',
-        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+        theme: 'dark',
+        color: 'red',
+        iconUrl: '../img/notok.png',
+        position: 'topRight',
       });
       selectedDates[0] = new Date(Date.now());
       buttonStart.setAttribute('disabled', 'true');
     } else {
       userSelectedDate = selectedDates[0];
-      console.log(userSelectedDate);
       buttonStart.removeAttribute('disabled');
       buttonStart.classList.add('btn-active');
       inputDate.classList.add('input-active');
