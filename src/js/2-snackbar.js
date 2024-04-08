@@ -22,7 +22,7 @@ const makePromise = ({ delay, shouldResolve }) => {
       backgroundColor: 'orange',
       theme: 'dark', // dark
       color: 'orange', // blue, red, green, yellow
-      iconUrl: '../img/achtung.png',
+      iconUrl: '/achtung.png',
       position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
     });
   }
@@ -47,7 +47,7 @@ form.addEventListener('submit', event => {
         backgroundColor: 'green',
         theme: 'dark', // dark
         color: 'green', // blue, red, green, yellow
-        iconUrl: '../img/ok.png',
+        iconUrl: '/ok.png',
         position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
       })
     )
@@ -58,7 +58,7 @@ form.addEventListener('submit', event => {
         backgroundColor: 'green',
         theme: 'dark', // dark
         color: 'red', // blue, red, green, yellow
-        iconUrl: '../img/ok.png',
+        iconUrl: '/ok.png',
         position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
       });
     });
